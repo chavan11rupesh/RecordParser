@@ -1,4 +1,5 @@
 import io
+import sys
 
 
 def read_file_records(file, type):
@@ -34,9 +35,13 @@ if __name__ == "__main__":
 
     #result = []
 
-    pipe_records = read_file_records("../resources/pipe_delimiter.txt", 'pipe')
-    comma_records = read_file_records("../resources/comma_delimiter.txt", 'comma')
-    space_records = read_file_records("../resources/space_delimiter.txt", "space")
+    pipe_delimiter_file = sys.argv[1]
+    comma_delimiter_file = sys.argv[2]
+    space_delimiter_file = sys.argv[3]
+
+    pipe_records = read_file_records(pipe_delimiter_file, 'pipe')
+    comma_records = read_file_records(comma_delimiter_file, 'comma')
+    space_records = read_file_records(space_delimiter_file, "space")
 
     result = pipe_records + comma_records + space_records
     output1 = sorted_by_gender_and_last_name(result)
