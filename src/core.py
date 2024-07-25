@@ -4,15 +4,18 @@ import sys
 
 def read_file_records(file, type):
     records = []
-    with open(file, 'r') as file:
-        for r in file:
-            if type == 'pipe':
-                record = r.strip().split('|')
-            elif type == 'comma':
-                record = r.strip().split(',')
-            elif type == 'space':
-                record = r.strip().split(' ')
-            records.append(record)
+    try:
+        with open(file, 'r') as file:
+            for r in file:
+                if type == 'pipe':
+                    record = r.strip().split('|')
+                elif type == 'comma':
+                    record = r.strip().split(',')
+                elif type == 'space':
+                    record = r.strip().split(' ')
+                records.append(record)
+    except FileNotFoundError:
+        print(f"file {file} not found")
     return records
 
 
