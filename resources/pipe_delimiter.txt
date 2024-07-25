@@ -1,1 +1,2 @@
-chavan | rupesh | male | black | 11/02/1996
+chavan|rupesh|male|black|11/02/1996
+angane|tushar|male|blue|15/01/1996
